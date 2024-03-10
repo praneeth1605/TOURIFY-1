@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles3.css' %}">
+    <title>TourifyPro</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TourifyPro</h1>
+        <center>
+        <div class="divider"></div>
+
+        <nav>
+            <ul class="menu">
+
+
+                <li><a href="{% url 'userbookrooms' %}">Rooms</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'touristviewplaces' %}">Places</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'userfeedback' %}">Feedback</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'userlogout' %}">logout</a>&nbsp;&nbsp;&nbsp;</li>
+                 <li><a href="{% url 'usertomainhome' %}" >Back to Mainpage</a></li>
+
+            </ul>
+        </nav>
+    </center>
+    </header>
+
+    <div class="content">
+        <div class="panel left-panel">
+            <p class="proverb" align="center"><br>Tourists don't know where they've been, <br>travelers don't know where they're going.</p>
+        </div>
+        <div class="panel right-panel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.LCk0mR0xMNSLTN92vVX9-wHaE1&pid=Api&P=0&h=180" alt="Tourism and Hospitality">
+        </div>
+    </div>
+    <!-- Content of your website goes here -->
+{% block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+

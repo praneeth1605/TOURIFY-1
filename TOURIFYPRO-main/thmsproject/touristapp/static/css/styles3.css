@@ -1,0 +1,158 @@
+/* styles.css */
+
+/* Font styles for the logo */
+.logo {
+    font-family: 'cursive', serif;
+    font-style: italic;
+    font-size: 48px;
+    text-align: center;
+    color:darkviolet;
+}
+
+/* Styling for the divider (dark black oval line) */
+.divider {
+    align-items: center;
+    width: 70%;
+    height: 4px;
+    background-color: black;
+}
+
+/* Styling for the menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(16, 16, 24);
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.proverb {
+    font-family: 'cursive', cursive;
+    font-style: italic;
+    font-weight: 40px;
+    font-size: 40px;
+    text-align: center;
+    transition: font-weight 0.3s, font-size 0.3s, color 0.3s; /* Add animation transitions */
+}
+
+.proverb:hover {
+    color: darkviolet; /* Change text color on hover */
+    font-weight: 45px; /* Increase font weight on hover */
+    font-size: 45px; /* Increase font size on hover */
+}
+
+.menu a:hover {
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.menu a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: darkviolet;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.menu a:hover:after {
+    transform: scale(1.0);
+    transition: transform 0.3s;
+    width: 100%;
+}
+
+/* Styling for the content panel */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    padding: 20px;
+}
+
+.left-panel {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.side-heading {
+    font-family: 'cursive', cursive;
+    font-style: italic;
+    font-size: 28px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    font-family: 'cursive', cursive;
+}
+
+input {
+    width: 40%;
+    padding: 10px;
+    font-family: 'cursive', cursive;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login-button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    font-family: 'cursive', cursive;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: darkviolet;
+}
+
+.register-link {
+    font-family: 'cursive', cursive;
+    text-align: center;
+    font-size: 16px;
+}
+
+.right-panel img {
+    width: 100%;
+    max-width: 100%;
+    height: 450px;
+    box-shadow: 5px 5px 5px #f15410;
+    border-radius: 5px;
+}

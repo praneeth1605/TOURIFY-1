@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>TourifyPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+{% block content %}
+    <nav class="navbar navbar-expand-lg" style="background-color:#80bfff">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="mainhome">TourifyPro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'hotel' %}">Hotel</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'user' %}">Toursit</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+    <div class="content">
+        <div class="panel left-panel">
+            <p class="proverb" align="center"><br>Tourism thrives on the <br>hospitality of hotels and providers;<br>they are the heart of memorable journeys.</p>
+        </div>
+        <div class="panel right-panel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.hBps02JzUDu2rfQOr-OGEgHaDt&pid=Api&P=0&h=180" alt="Tourism and Hospitality">
+        </div>
+    </div>
+    <!-- Content of your website goes here -->
+
+    {% endblock %}
+<footer id="sticky-footer" class="flex-shrink-0 py-2">
+  <div class="container text-center">
+    <small>Copyright ©️.All rights reserved</small>
+  </div>
+</footer>
+<style>
+  #sticky-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: 	 #00b33c;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  }
+</style>
+</body>
+</html>
+
+

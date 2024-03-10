@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+    <title>TourifyPro</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TourifyPro</h1>
+        <center>
+        <div class="divider"></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="{% url 'usertomainhome' %}" >Back to Home page</a></li>
+
+
+
+            </ul>
+        </nav>
+    </center>
+    </header>
+
+    <div class="content">
+         <div class="left-panel">
+             <h2 align="center",font-family="cursive" style="color:red">{{msg}}</h2>
+             <br>
+            <h2 class="side-heading">Login</h2>
+            <br>
+            <form method="post" action="{% url 'checkprovlogin' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username"><b>Username</b></label>
+                    <br>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <br>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button class="login-button">Submit</button>
+            </form>
+            <p class="register-link">Not a user? <a href="{% url 'provregister'%}">Register</a></p>
+        </div>
+
+        <div class="panel right-panel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.hBps02JzUDu2rfQOr-OGEgHaDt&pid=Api&P=0&h=180" alt="Tourism and Hospitality">
+        </div>
+    </div>
+    <!-- Content of your website goes here -->
+{% block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+

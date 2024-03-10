@@ -1,0 +1,142 @@
+{% extends 'index3.html' %}
+{% block content %}
+
+<h2 align="center",font-family="cursive" style="color:Red">{{msg}}</h2>
+<style>
+/* styles.css */
+
+
+/* Styling for attribute boxes */
+.attribute {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+}
+
+/* Styling for text boxes */
+.attribute input[type="text"],
+.attribute input[type="email"] {
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+}
+.selection{
+border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+    font-family: 'cursive', cursive;
+    font-size: 18px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 2px 2px 2px #2537ae;
+
+}
+
+/* Beautiful hover effect on text boxes */
+.attribute input[type="text"]:hover,
+.attribute input[type="email"]:hover {
+    border: 10px solid white;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px #2537ae;
+}
+
+.register-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #c8d6c9; /* Change the background color on hover */
+}
+
+.register-button:active {
+    transform: scale(0.95); /* Add a small scale-down effect when the button is clicked */
+}
+
+.container {
+    text-align: center;
+}
+
+.attribute label {
+    text-decoration: none;
+    color: rgb(16, 16, 24);
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+</style>
+
+<body>
+    <div class="content" align="center">
+        <div class="panel right-panel">
+            <form method="post" action="{% url 'registeruserfeedback' %}">
+                {% csrf_token %}
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <label for="hotel">Name of Hotel</label>
+        <input class="selection" type="text" id="Hotel" name="Hotel" required><br><br>
+
+                            <label for="state">State</label>
+        <input class="selection" type="text" id="State" name="State" required><br><br>
+
+                            <label for="City">City</label>
+        <input class="selection" type="text" id="City" name="City" required><br><br>
+
+        <label for="cleanliness">Room Cleanliness:</label>
+        <input class="selection" type="text" id="cleanliness" name="cleanliness" required><br><br>
+
+        <label for="service">Customer Service:</label>
+        <input class="selection" type="text" id="service" name="service" required><br><br>
+
+        <label for="comfort">Room Comfort:</label>
+        <input class="selection" type="text" id="comfort" name="comfort" required><br><br>
+
+        <label for="amenities">Amenities:</label>
+        <input class="selection" type="text" id="amenities" name="amenities" required><br><br>
+
+        <label for="location">Location Grievances </label>
+        <input class="selection" type="text" id="location" name="location" required><br><br>
+
+        <label for="value">Value for Money:</label>
+        <input class="selection" type="text" id="value" name="value" required><br><br>
+
+        <label for="comments">Additional Comments:</label><br>
+        <textarea class="selection" id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+
+              <div class="container">
+                                <button type="submit" class="register-button">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

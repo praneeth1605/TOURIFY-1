@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles3.css' %}">
+    <title>TourifyPro</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TourifyPro</h1>
+        <center>
+        <div class="divider"></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="{% url 'usertomainhome' %}" >Back to Home page</a></li>
+
+
+            </ul>
+        </nav>
+    </center>
+    </header>
+
+    <div class="content">
+        <div class="panel left-panel">
+             <div class="left-panel">
+                 <h2 align="center",font-family="cursive" style="color:Red">{{msg}}</h2>
+                 <br>
+            <h2 class="side-heading">Login</h2>
+            <br>
+            <form method="post" action="{% url 'checktouristlogin' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username"><b>Username</b></label>
+                    <br>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <br>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button class="login-button">Submit</button>
+            </form>
+            <p class="register-link">Not a user? <a href="{% url 'userregister'%}">Register</a></p>
+</div>
+        </div>
+        <div class="panel right-panel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://tse3.mm.bing.net/th?id=OIP.LCk0mR0xMNSLTN92vVX9-wHaE1&pid=Api&P=0&h=180" alt="Tourism and Hospitality">
+        </div>
+    </div>
+    <!-- Content of your website goes here -->
+{% block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+

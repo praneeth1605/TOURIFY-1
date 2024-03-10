@@ -1,0 +1,93 @@
+{% extends 'index2.html' %}
+{% block content %}
+<style>
+    /* styles.css */
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for the table header */
+th {
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style for alternating rows in the table body */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray background color */
+}
+
+/* Style for the table data cells */
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+</style>
+<p>I am in Services page</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <b>Total Services = </b> {{count}}
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+  <table border="1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name of Hotel</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Description</th>
+                <th>Accommodation Type</th>
+                <th>Amenities</th>
+                <th>Room No</th>
+                <th>Room Size</th>
+                <th>Room Type</th>
+                <th>Cost Per Night</th>
+                <th>Check-In and Check-Out Policies</th>
+                <th>Dining Type</th>
+                <th>Dining Timings</th>
+                <th>Bar and Beverage Service</th>
+                <th>Private Dining</th>
+                <th>Live Entertainment</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {% for service in c %}
+            <tr>
+                <td>{{ service.NameofHotel }}</td>
+                <td>{{ service.City }}</td>
+                <td>{{ service.state }}</td>
+                <td>{{ service.Description }}</td>
+                <td>{{ service.AccomodationType }}</td>
+                <td>{{ service.Amenities }}</td>
+                <td>{{ service.RoomNo }}</td>
+                <td>{{ service.RoomSize }}</td>
+                <td>{{ service.RoomType }}</td>
+                <td>{{ service.CostPerNight }}</td>
+                <td>{{ service.CheckInandCheckOutPolicies }}</td>
+                <td>{{ service.Diningtype }}</td>
+                <td>{{ service.diningTimings }}</td>
+                <td>{{ service.BarandBeverageservice }}</td>
+                <td>{{ service.privateDining }}</td>
+                <td>{{ service.LiveEntertainment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,158 @@
+
+{% block content %}
+
+<h2 align="center",font-family="cursive" style="color:green">{{msg}}</h2>
+<style>
+/* styles.css */
+
+
+/* Styling for attribute boxes */
+.attribute {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+}
+
+/* Styling for text boxes */
+.attribute input[type="text"],
+.attribute input[type="email"] {
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+}
+.selection{
+border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+    font-family: 'cursive', cursive;
+    font-size: 18px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 2px 2px 2px #2537ae;
+
+}
+
+/* Beautiful hover effect on text boxes */
+.attribute input[type="text"]:hover,
+.attribute input[type="email"]:hover {
+    border: 10px solid white;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px #2537ae;
+}
+
+.register-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #c8d6c9; /* Change the background color on hover */
+}
+
+.register-button:active {
+    transform: scale(0.95); /* Add a small scale-down effect when the button is clicked */
+}
+
+.container {
+    text-align: center;
+}
+
+.attribute label {
+    text-decoration: none;
+    color: rgb(16, 16, 24);
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+</style>
+
+<body>
+    <div class="content" align="center">
+        <div class="panel right-panel">
+            <form method="post" action="{% url 'registerhotel' %}">
+                {% csrf_token %}
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <label for="FirstName">Firstname</label>
+                            <br>
+                            <input class="selection" type="text" id="Firstname" name="Firstname" required>
+                            <br>
+                            <label for="Lastname">LastName</label>
+                            <br>
+                            <input class="selection" type="text" id="LastName" name="LastName" required>
+                            <br>
+                            <label for="age">Age</label>
+                            <br>
+                            <input class="selection" type="text" id="Age" name="Age" required>
+                            <br>
+                            <label for="Qualification">Qualification</label>
+                            <br>
+                            <input class="selection" type="text" id="Qualification" name="Qualification" required>
+                            <br>
+                            <label for="Email">Email</label>
+                            <br>
+                            <input class="selection" type="email" id="Email" name="Email" required>
+                            <br>
+                            <label for="MobileNumber">MobileNumber</label>
+                            <br>
+                            <input class="selection" type="number" id="MobileNumber" name="MobileNumber" required>
+                            <br></br>
+
+                            <label for="Username">Username</label>
+                            <br>
+                            <input class="selection" type="text" id="Username" name="Username" required>
+                            <br>
+                             <small>Guidelines:Username must be a combination underscore and numericals and alphabets</small>
+                            <br>
+                            <br>
+                            <label for="password"> Enter Password</label>
+                            <br>
+                            <input class="selection" type="password" id="password" name="password">
+                            <br>
+                             <small>Password must contain alphabets,numbers with special characters with atmost of 8</small>
+                            <br>
+                            <br>
+                            <label for="Confirm_password"> Confirm Password</label>
+                            <br>
+                            <input class="selection" type="password" id="Confirm_password" name="Confirm_password">
+                            <br>
+                             <small>Password must contain alphabets,numbers with special characters with atmost of 8</small>
+                            <br>
+                            <br>
+
+                            <div class="container">
+                                <button class="register-button">Register Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

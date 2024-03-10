@@ -1,0 +1,66 @@
+{% extends 'index3.html' %}
+{% block content %}
+<style>
+    .services-button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .card {
+        border: 1px solid black; /* Add this line to apply a border to each card */
+        border-radius: 10px; /* Adjust the border-radius as needed for rounded corners */
+        margin: 20px; /* Adjust the margin as needed */
+        padding: 25px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<br>
+<br>
+<br>
+
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+
+<br>
+
+<div class="container mt-5">
+    <div class="row">
+        {% for service in c %}
+        <div class="col-md-4 mb-4 hotel-card" data-hotel="{{ service.NameofHotel | lower }}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Hotel:</b> {{ service.NameofHotel }}</h5>
+                    <p class="card-text"><b>City:</b> {{ service.City }}</p>
+                    <p class="card-text"><b>State:</b> {{ service.State }}</p>
+                    <p class="card-text"><b>Description:</b> {{ service.Description }}</p>
+                    <p class="card-text"><b>Accommodation:</b> {{ service.AccomodationType }}</p>
+                    <p class="card-text"><b>Amenities:</b> {{ service.Amenities }}</p>
+                    <p class="card-text"><b>Room No:</b> {{ service.RoomNo }}</p>
+                    <p class="card-text"><b>Room Type:</b> {{ service.RoomType }}</p>
+                    <p class="card-text"><b>Cost Per Night:</b>{{ service.CostPerNight }}/-</p>
+                    <a href="{% url 'bookingsuccess' %}"><button class="services-button">Book</button></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $(".hotel-card").filter(function () {
+                $(this).toggle($(this).data("hotel").indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+{% endblock %}

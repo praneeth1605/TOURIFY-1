@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles3.css' %}">
+    <title>TourifyPro</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TourifyPro(User)</h1>
+        <center>
+        <div class="divider"></div>
+
+        <nav>
+            <ul class="menu">
+
+
+                <li><a href="{% url 'userbookrooms' %}">Rooms</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'touristviewplaces' %}">Places</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'userfeedback' %}">Feedback</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'userlogout' %}">logout</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'usertomainhome' %}" >Back to Home page</a></li>
+
+            </ul>
+        </nav>
+    </center>
+    </header>
+
+    <!-- Content of your website goes here -->
+{% block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+

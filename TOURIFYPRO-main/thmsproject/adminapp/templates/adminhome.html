@@ -1,0 +1,47 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>TourifyPro</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">TourifyPro</h1>
+        <center>
+        <div class="divider"></div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'reservations' %}">Reservations</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'services' %}">Services</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'feedback'%}">Feedback</a>&nbsp;&nbsp;&nbsp;</li>
+                <li><a href="{% url 'logout'%}">Logout</a>&nbsp;&nbsp;&nbsp;</li>
+
+            </ul>
+        </nav>
+    </center>
+    </header>
+
+    <div class="content">
+        <div class="panel left-panel">
+            <p class="proverb" align="center"><br><br>Travel makes one modest.<br>You see what a tiny place you occupy in the <br>world.</p>
+        </div>
+        <div class="panel right-panel">
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.hBps02JzUDu2rfQOr-OGEgHaDt&pid=Api&P=0&h=180" alt="Tourism and Hospitality">
+        </div>
+    </div>
+    <!-- Content of your website goes here -->
+{% block content %}
+
+    {% endblock %}
+</body>
+</html>
+
+

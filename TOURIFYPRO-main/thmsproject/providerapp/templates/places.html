@@ -1,0 +1,53 @@
+{% extends 'index2.html' %}
+{% block content %}
+<style>
+    /* Styles for the services buttons */
+.services-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.services-button {
+ background-color: #4caf50;
+    color: #fff;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.services-button:hover {
+    background-color: #2980b9;
+}
+
+/* Style for the center button that glows on hover */
+.center-button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.glowing-button {
+
+}
+
+.glowing-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px #45a049;
+}
+
+</style>
+
+<div class="services-buttons">
+    <a href="{% url 'addplaces' %}"><button class="services-button">Add places</button></a>
+    <br>
+     <br>
+     <a href="{% url 'viewplaces' %}"><button class="services-button">View Places</button></a>
+     <br>
+     <br>
+
+</div>
+
+
+
+{% endblock %}

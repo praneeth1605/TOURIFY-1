@@ -1,0 +1,227 @@
+
+{% block content %}
+
+<h2 align="center",font-family="cursive" style="color:Red">{{msg}}</h2>
+<style>
+/* styles.css */
+
+
+/* Styling for attribute boxes */
+.attribute {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+}
+
+/* Styling for text boxes */
+.attribute input[type="text"],
+.attribute input[type="email"] {
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+}
+.selection{
+border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+    font-family: 'cursive', cursive;
+    font-size: 18px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 2px 2px 2px #2537ae;
+
+}
+
+/* Beautiful hover effect on text boxes */
+.attribute input[type="text"]:hover,
+.attribute input[type="email"]:hover {
+    border: 10px solid white;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px #2537ae;
+}
+
+.register-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #c8d6c9; /* Change the background color on hover */
+}
+
+.register-button:active {
+    transform: scale(0.95); /* Add a small scale-down effect when the button is clicked */
+}
+
+.container {
+    text-align: center;
+}
+
+.attribute label {
+    text-decoration: none;
+    color: rgb(16, 16, 24);
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+</style>
+
+<body>
+    <div class="content" align="center">
+        <div class="panel right-panel">
+            <form method="post" action="{% url 'registertourist' %}">
+                {% csrf_token %}
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <label for="FirstName">Firstname</label>
+                            <br>
+                            <input class="selection" type="text" id="Firstname" name="Firstname" required>
+                            <br><br>
+                            <label for="Lastname">LastName</label>
+                            <br>
+                            <input class="selection" type="text" id="LastName" name="LastName" required>
+                            <br><br>
+                            <label for="age">Age</label>
+                            <br>
+                            <input class="selection" type="text" id="Age" name="Age" required>
+                            <br><br>
+                             <label for="Gender">Gender</label>
+                            <br>
+                          <select class="selection" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+                            <label for="dob">Date of Birth:</label>
+                            <br>
+        <input class="selection" type="date" name="dob" required><br><br>
+
+                            <label for="Email">Email</label>
+                            <br>
+                            <input class="selection" type="email" id="Email" name="Email" required>
+                            <br><br>
+
+                            <label for="MobileNumber">MobileNumber</label>
+                            <br>
+                            <input class="selection" type="number" id="Mobile" name="Mobile" required>
+                            <br><br>
+
+                            <label for="address">Address:</label>
+                            <br>
+        <input class="selection"  type="text" name="address"><br><br>
+                            <label for="country">Country:</label>
+                            <br>
+        <input class="selection" type="text" name="country"><br><br>
+                            <label for="State">State</label>
+                            <br>
+                            <select class="selection" id="state" name="state">
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+        <option value="Daman and Diu">Daman and Diu</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Ladakh">Ladakh</option>
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Puducherry">Puducherry</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+    </select>
+                            <br>
+
+                            <label for="City">City</label>
+                            <br>
+                            <input class="selection" type="text" id="City" name="City" required>
+                            <br><br>
+
+                            <label for="postal_code">Postal Code:</label>
+                            <br>
+        <input type="text" name="postal_code"><br>
+                            <br>
+
+                            <label for="Username">Username</label>
+                            <br>
+                            <input class="selection" type="text" id="Username" name="Username" required>
+                            <br>
+                             <small>Guidelines:Username must be a comdination underscore and numericals and alphabets</small>
+                            <br>
+                            <br>
+                            <br>
+                            <label for="password"> Enter Password</label>
+                            <br>
+                            <input class="selection" type="password" id="password" name="password">
+                            <br>
+                             <small>Password must contain alphabets,numbers with special charachters with atmost of 8</small>
+                            <br>
+                            <br>
+                            <br>
+                            <label  for="Confirm password"> Confirm Password</label>
+                            <br>
+                            <input class="selection" type="password" id="confirm" name="confirm">
+                            <br>
+                             <small>Password must contain alphabets,numbers with special charachters with atmost of 8</small>
+                            <br>
+                            <br>
+
+                            <div class="container">
+                                <button class="register-button">Register Now</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends 'index2.html' %}
+{% block content %}
+
+<h2 align="center",font-family="cursive" style="color:green">{{msg}}</h2>
+<style>
+/* styles.css */
+
+
+/* Styling for attribute boxes */
+.attribute {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+}
+
+.selection{
+border: 2px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3px;
+    width: 50%;
+    margin: 0 auto; /* Center-align the attribute box */
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 2px 2px 2px #2537ae;
+
+}
+
+/* Styling for text boxes */
+.attribute input[type="text"],
+.attribute input[type="email"] {
+    width: 50%; /* Make text boxes take up 100% of the attribute box width */
+    padding: 9px;
+    border: 1px solid #151313;
+    border-radius: 5px;
+    transition: border 0.3s, transform 0.3s;
+}
+
+/* Beautiful hover effect on text boxes */
+.attribute input[type="text"]:hover,
+.attribute input[type="email"]:hover {
+    border: 10px solid white;
+    transform: scale(1.02);
+    box-shadow: 2px 2px 2px #2537ae;
+}
+
+.register-button {
+    background-color: darkgreen;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #c8d6c9; /* Change the background color on hover */
+}
+
+.register-button:active {
+    transform: scale(0.95); /* Add a small scale-down effect when the button is clicked */
+}
+
+.container {
+    text-align: center;
+}
+
+.attribute label {
+    text-decoration: none;
+    color: rgb(16, 16, 24);
+    font-family: 'cursive', cursive;
+    font-size: 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+</style>
+
+<body>
+    <div class="content" align="center">
+        <div class="panel right-panel">
+
+
+            <form method="post" action="{% url 'insertservices' %}">
+                {% csrf_token %}
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <label for="Hotel">Hotel Name </label>
+                            <br>
+                            <input type="text" id="Name" name="Name" required>
+                            <br>
+                            <br>
+                            <label for="City">City</label>
+                            <br>
+                            <input type="text" id="City" name="City" required>
+                            <br>
+                            <br>
+                            <label for="State">State</label>
+                            <br>
+                            <input type="text" id="State" name="State" required>
+                            <br>
+                            <br>
+                            <label for="pincode">Hotel Reference ID</label>
+                            <br>
+                            <input type="text" id="referid" name="referid" placeholder="Enter Ref ID (e.g., HOTELE123)" required>
+                            <br>
+                            <small>Guidelines: Ref ID must be the first 3 alphabets of the hotel name and the last 3 of the license number.</small>
+                            <label for="Description">Description</label>
+                            <br>
+                            <input type="text" id="Description" name="Description" maxlength="200" required>
+                            <br>
+                            <br>
+                            <label for="AccomodationType">Accomodation Type</label>
+                            <br>
+                            <select class="selection" id="Select" name="AccomodationType" required>
+                                <option value="">---Select---</option>
+        <option value="Standard">Standard</option>
+        <option value="Deluxe">Deluxe</option>
+        <option value="Suites">Suites</option>
+
+    </select>
+                            <br>
+                            <br>
+                            <label for="Amenities">Amenities</label>
+                            <br>
+                            <input type="text" id="Amenities" name="Amenities" required>
+                            <br>
+                            <br>
+                            <label for="RoomNo">RoomNo</label>
+                            <br>
+                            <input type="number" id="RoomNo" name="RoomNo" required>
+                            <br>
+                            <br>
+                            <label for="RoomSize">RoomSize</label>
+                            <br>
+                            <input type="text" id="RoomSize" name="RoomSize" required>
+                            <br>
+                            <br>
+                            <label for="RoomType">RoomType</label>
+                            <br>
+                            <input type="text" id="RoomType" name="RoomType" required>
+                            <br>
+                            <br>
+                            </br>
+                            <label for="CostPerNight">CostPerNight</label>
+                            <br>
+                            <input type="number" id="CostPerNight" name="CostPerNight" required>
+                            <br>
+                            <br>
+                            <label for=" CheckInandCheckOutPolicies"> CheckInandCheckOutPolicies</label>
+                            <br>
+                            <input type="text" id=" CheckInandCheckOutPolicies" name="CheckInandCheckOutPolicies" maxlength="100" required>
+                            <br>
+                            <br>
+                            <label for=" Dining_type"> Dining Type</label>
+                            <br>
+                            <select class="selection" id="Dining" name="Dining" required>
+                                <option value="">---Select---</option>
+        <option value="FineDine">FineDine</option>
+        <option value="CasualDine">CasualDine</option>
+        <option value="Buffet">Buffet</option>
+                                <option value="Bestro">Bestro</option>
+
+    </select>
+                            <br>
+                            <br>
+                            <label for="diningTimings">diningTimings</label>
+                            <br>
+                            <input type="text" id="diningTimings" name="diningTimings" required>
+                            <br>
+                            <br>
+                            <label for="BarandBeverageservice">BarandBeverageservice</label>
+                            <br>
+                             <select class="selection" id="BarandBeverage" name="BarandBeverage" required>
+                                 <option value="">---Select---</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+
+
+    </select>
+                            <br>
+                            <br>
+                            <label for=" privateDining"> privateDining</label>
+                            <br>
+                             <select class="selection" id="privateDining" name="privateDining" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+
+
+    </select>
+                            <br></br>
+                            <br>
+                            <label for="LiveEntertainment">LiveEntertainment</label>
+                            <br>
+                            <select class="selection" id="LiveEntertainment" name="LiveEntertainment" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+
+
+    </select>
+                            <br>
+                            <br></br>
+                            <br>
+                            <div class="container">
+                                <button class="register-button">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}
